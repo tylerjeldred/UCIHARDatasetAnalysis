@@ -32,3 +32,9 @@ vignettes/*.pdf
 *.utf8.md
 *.knit.md
 .Rproj.user
+
+
+# Project Keeps and Ignores
+HAR.zip
+UCI HAR Dataset/
+UCI_HAR_Dataset_Summary_Subject_Activity_Averages.txt

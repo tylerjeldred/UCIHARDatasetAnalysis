@@ -111,7 +111,13 @@ features <-
 
 activityLabels <- 
   fread(file.path("UCI HAR Dataset", "activity_labels.txt")) %>%
-  rename(ActivityId = V1, ActivityName = V2)
+  rename(ActivityId = V1, ActivityName = V2) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "LAYING", "Laying")) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "SITTING", "Sitting")) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "STANDING", "Standing")) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "WALKING_DOWNSTAIRS", "Walking Downstairs")) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "WALKING_UPSTAIRS", "Walking Upstairs")) %>%
+  mutate(ActivityName = str_replace_all(ActivityName, "WALKING", "Walking"))
 
 
 subjectsTrain <- 
